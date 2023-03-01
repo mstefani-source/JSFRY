@@ -1,9 +1,22 @@
 {
-    "compilerOptions": {
+	"compilerOptions": {
+		"target": "ES6",
 		"module": "CommonJS",
+		"strictNullChecks": true,
+		"strictPropertyInitialization":true,
 		"sourceMap": true,
 		"allowJs": true,
-        "lib": ["es6"],
+		"lib": [
+			"ES6",
+			"DOM"
+		],
 		"outDir": "build"
-      }
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts"
+	]
 }
