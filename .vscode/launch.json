@@ -11,7 +11,7 @@
 			"skipFiles": [
 				"<node_internals>/**"
 			],
-			"program": "${workspaceFolder}/build/traverce.js"
+			"program": "${workspaceFolder}/build/ar.js"
 		}
 	]
 }
