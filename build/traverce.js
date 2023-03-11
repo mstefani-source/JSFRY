@@ -1,53 +1,61 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class TreeNode {
-    constructor(val) {
-        this.value = val;
+    constructor(...val) {
         this.left = null;
         this.right = null;
+        if (val.length > 0) {
+            this.value = val[0];
+        }
+        else {
+            this.value = null;
+        }
     }
 }
 class BST {
     constructor(...value) {
-        if (value.length === 1) {
+        this.count = 0;
+        if (value.length > 0) {
             this.root = new TreeNode(value[0]);
-            this.count = 1;
         }
-        else if (value.length === 0) {
-            this.root = undefined;
-            this.count = 0;
+        else {
+            this.root = new TreeNode();
         }
     }
     size() {
         return this.count;
     }
     insert(value) {
-        this.count++;
-        let newNode = new TreeNode(value);
-        const searchTree = (node) => {
-            if (node && value < node.value) {
-                if (!node.left) {
-                    node.left = newNode;
-                }
-                else {
-                    searchTree(node.left);
-                }
+        let newLeaf = new TreeNode(value);
+        let searchTree = (node) => {
+            if (node.value === null) {
+                this.count++;
+                this.root = newLeaf;
             }
-            if (node && value >= node.value) {
-                if (!node.right) {
-                    node.right = newNode;
+            else {
+                // if value < current node value go left
+                if (value < node.value) {
+                    if (node.left !== null) {
+                        searchTree(node.left);
+                    }
+                    else {
+                        this.count++;
+                        node.left = newLeaf;
+                    }
                 }
-                else {
-                    searchTree(node.right);
+                // if value > current node value go right
+                if (value > node.value) {
+                    if (node.right !== null) {
+                        searchTree(node.right);
+                    }
+                    else {
+                        this.count++;
+                        node.right = newLeaf;
+                    }
                 }
             }
         };
-        if (this.root !== undefined) {
-            searchTree(this.root);
-        }
-        else {
-            this.root = newNode;
-        }
+        searchTree(this.root);
     }
     remove(value) {
         this.count--;
@@ -61,11 +69,6 @@ class BST {
     dfs(value) {
     }
 }
-const traverse = (root) => {
-    let result = [];
-    if (root == null)
-        return result;
-};
 let newTree = new BST();
 let arr = [12, 7, 9, 3, 8, 10];
 arr.forEach(item => {
