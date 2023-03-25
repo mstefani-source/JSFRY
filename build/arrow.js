@@ -15,7 +15,7 @@ const groupAnnograms = (col) => {
       }
     });
 
-  return Object.values(result);
+  return Object.keys(result);
 };
 
 
