@@ -1,7 +1,23 @@
-function isNegative(el){
-	return el < 0;
+const arr = [
+	{ id: 15 },
+	{ id: -1 },
+	{ id: 0 },
+	{ id: 3 },
+	{ id: 12.2 },
+	{},
+	{ id: null },
+	{ id: NaN },
+	{ id: "undefined" },
+];
+
+let invalidEntries = 0;
+
+function isValid(isntance) {
+	if (Number.isFinite(isntance.id) && isntance.id != 0){
+		return true
+	}
+	invalidEntries++;
+	return false
 }
 
-const int8 = new Int8Array([10, 0, -10, 20, -30, 40, 50])
-
-console.log(int8.filter(isNegative))
+console.log(arr.filter(isValid))
