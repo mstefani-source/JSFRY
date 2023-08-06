@@ -4,4 +4,6 @@ const animals = [
 	['cat','meow']
 ]
 
-console.log(Object.fromEntries(animals))
+const obj = Object.fromEntries(animals)
+
+console.log(obj.monkey)
