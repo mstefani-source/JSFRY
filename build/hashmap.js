@@ -1,40 +1,26 @@
 /**
- * @param {Array<number>} arr
- * @param {number} 
- * @returns {number} 
+ * 
+ * @param {Array<number>} arr 
+ * @param {number} k 
+ * @returns 
  */
-
 function findsum(arr, k) {
-	const hashOfSums = { '0': 1 }
-	let count = 0;
-	let subSum = 0;
-	let subArr = []
-	let prevCount = 0
-	for (let i = 0; i < arr.length; i++) {
-		subSum += arr[i];
-		
-		let to_remove = subSum - k;
+	let count = 0
+	let subSum = 0
+	let hashOfSums = { '0': 1 }
 
-		if (to_remove in hashOfSums) {
-			count += hashOfSums[to_remove]
-		}
-	
-		if (subSum in hashOfSums) {
-			prevCount = hashOfSums[subSum]
-		} else {
-			prevCount = 0;
-		}
-
-		hashOfSums[subSum] = prevCount + 1
-		
+	for (let index = 0; index < arr.length; index++) {
+		subSum += arr[index]
+		hashOfSums[subSum] = hashOfSums[subSum] + 1 || 1
+		let diff = subSum - k;
+		count += hashOfSums[diff] || 0
 	}
-	console.log(hashOfSums)
-
 	return count
 }
 //     0  1  2  3  4   5  6   7
 // arr = [4, 2, 2, 1, 2, -3, 5, -8]
 
-arr = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+//arr = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 console.log(findsum(arr, 5))
