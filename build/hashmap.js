@@ -17,4 +17,5 @@ function findSums(arr, k) {
 }
 
 ar = [4, 2, 2, 1, 2, -3, 5, -8]
-console.log(findSums(ar, 5))
+
+console.log(findSums(ar, 0))

@@ -1,0 +1,13 @@
+p {
+	color: red;
+}
+
+html {
+	font-size: 10px; 
+	font-family: "Montserrat", sans-serif; 
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}

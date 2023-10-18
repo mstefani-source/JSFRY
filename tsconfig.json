@@ -1,22 +1,13 @@
 {
-	"compilerOptions": {
-		"target": "ES6",
-		"module": "CommonJS",
-		"strictNullChecks": true,
-		"strictPropertyInitialization":true,
-		"sourceMap": true,
+	"compilerOptions":{
+		"outDir": "./built",
 		"allowJs": true,
-		"lib": [
-			"ES6",
-			"DOM"
-		],
-		"outDir": "build"
+		"sourceMap": true,
+		"baseUrl": "./JSONparse",
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"target": "es6"
 	},
-	"include": [
-		"src/**/*"
-	],
-	"exclude": [
-		"node_modules",
-		"**/*.spec.ts"
-	]
+	"include": ["./src/**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
 }
