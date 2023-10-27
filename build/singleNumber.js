@@ -26,5 +26,5 @@ const getSingleNumber = (nums) => {
 
   console.log(getSingleNumber([2, 2, 1])); // 1
   console.log(getSingleNumber([4, 1, 2, 1, 2])); // 4
-  console.log(getSingleNumber([4, 1, 2, 1, 2, 4])); // 4
+  console.log(getSingleNumber([4, 1, 2, 1, 2, 4])); // NaN
 
