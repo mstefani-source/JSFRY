@@ -7,7 +7,8 @@
 
 const getSingleNumber = (nums) => {
 	let res = {}
-	nums.forEach(el => { res[el] ? res[el] = res[el] + 1 : res[el] = 1 })
+	
+	nums.forEach(el => { res[el] = res[el] + 1 || 1 })
 
 	for (const [k, v] of Object.entries(res)) {
 		if (v == 1) return Number(k)
