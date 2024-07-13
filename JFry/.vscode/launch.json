@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Solution",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.Solution",
+            "projectName": "App"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.mycompany.app.App",
+            "projectName": "App",
+            "vmArgs": "-enableassertions"
+        }
+    ]
+}
