@@ -1,0 +1,4 @@
+createFile result defaultFile.txt
+name of the file = defaultFile.txt
+result of deleting false
+final
